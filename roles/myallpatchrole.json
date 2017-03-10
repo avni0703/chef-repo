@@ -1,0 +1,42 @@
+{
+  "name": "MyAllPatchRole",
+  "description": "",
+  "json_class": "Chef::Role",
+  "default_attributes": {
+    "git_installer": {
+      "sudo": {
+        "groups": [
+          "oracleadmin",
+          "oracleuser",
+          "oracledba",
+          "oraclemanager"
+        ],
+        "users": [
+          "avni",
+          "suresh",
+          "ganesh",
+          "ramesh",
+          "sagar",
+          "nilesh",
+          "Krishna"
+        ]
+      }
+    }
+  },
+  "override_attributes": {
+
+  },
+  "chef_type": "role",
+  "run_list": [
+    "recipe[git_installer]",
+    "recipe[first_taste]"
+  ],
+  "env_run_lists": {
+    "prod": [
+      "role[MyAllPatchRole]"
+    ],
+    "dev": [
+      "role[MyAllPatchRole]"
+    ]
+  }
+}

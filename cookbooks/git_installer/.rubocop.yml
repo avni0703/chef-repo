@@ -1,0 +1,5 @@
+Style/Encoding:
+  EnforcedStyle: never
+  Enabled: false
+Style/Tab:
+  Enabled: false
